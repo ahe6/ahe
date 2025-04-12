@@ -27,7 +27,17 @@ const blacklist = [
 // Get the absolute root path of the project
 const ROOT_PATH = path.resolve(__dirname);
 
+function shouldSkipDirectory(dirPath) {
+  const baseName = path.basename(dirPath);
+  return blacklist.includes(baseName) || dirPath.includes('/.git/');
+}
+
 function getDirectoryEntries(dirPath) {
+  // Skip blacklisted directories
+  if (shouldSkipDirectory(dirPath)) {
+    return [];
+  }
+
   const relativePath = path.relative(ROOT_PATH, dirPath);
   return fs.readdirSync(dirPath)
     .filter(file => !blacklist.includes(file) && file !== 'index.html')
@@ -105,9 +115,9 @@ function generateListingRecursive(currentPath) {
     }
   }
   
-  // Recursively process subdirectories
+  // Only process non-blacklisted subdirectories
   entries
-    .filter(entry => entry.type === 'directory')
+    .filter(entry => entry.type === 'directory' && !shouldSkipDirectory(path.join(currentPath, entry.name)))
     .forEach(entry => {
       const fullPath = path.join(currentPath, entry.name);
       generateListingRecursive(fullPath);

@@ -4,17 +4,10 @@ const toHTML = require('directory-index-html');
 
 // Files to hide from listings
 const blacklist = [
-  '.nojekyll',
   'CNAME',
-  'alpine-fs.json',
-  'v86.wasm',
-  'seabios.bin',
-  'vgabios.bin',
-  'libv86.js',
   'node_modules',
   'package.json',
   'package-lock.json',
-  'alpine-rootfs-flat',
   'generateListing.js',
   'index.html',
   '.git',

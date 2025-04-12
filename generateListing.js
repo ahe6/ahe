@@ -89,10 +89,19 @@ function generateListingRecursive(currentPath) {
   const displayPath = relativePath || '/';
 
   // Generate HTML with root-relative paths
-  const html = toHTML(displayPath, entries, {
+  // Add cache control headers to prevent browser caching
+  const cacheControlMeta = '<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">';
+  const pragmaMeta = '<meta http-equiv="Pragma" content="no-cache">';
+  const expiresMeta = '<meta http-equiv="Expires" content="0">';
+  
+  let html = toHTML(displayPath, entries, {
     filter: false,
     root: '/' // Use root-relative paths
   });
+
+  // Insert meta tags after <head>
+  html = html.replace('<head>', '<head>\n  ' + cacheControlMeta + '\n  ' + pragmaMeta + '\n  ' + expiresMeta);
+
 
   const indexPath = path.join(currentPath, 'index.html');
   console.log(`Creating index at: ${indexPath}`);

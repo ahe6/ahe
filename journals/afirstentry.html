@@ -1,0 +1,78 @@
+<p> April 13th 2025. Today was uneventful. I cooked again, although I stil think it's quite effort consuming to do so.
+    Yesterday was the first I cooked in around 2 weeks, and it was not too bad of an experience but it tasted terrible.
+    Which is spectacular, because I did not think this even when I was eating canned food. It's unfortunate there aren't 
+    many good options to eat fast, cheap, and healthy.
+    <br>
+    Yesterday, I was ready to sleep around 12:30am, but I was up until about 4am yesterday, so I missed the chance to
+    calibrate my sleep schedule. I've been getting better at fixing my sleep schedule though. Now I can normally fix it
+    in just a day when I try. 
+    <br>
+    I'm still trying to get the jax meta-rl environment to work. Functional programming is quite interesting, 
+    and it's been much easier to work with than in pytorch. it's a pity more people don't use jax. I also had this stupid idea of
+    using hissp with jax, and I'm convinced it's possible but haven't tried yet.
+    I also was intending to write a chinese to lisp interpreter for a friend who is terrible at english, which 
+    should be possible in about 10 minutes since theres a bunch of implementations of lisps out there already.
+    But they procrastinated so much that I doubt I'll need to do this for quite a while. I'm betting that they
+    forget about it entirely, and I never end up doing this. 
+    <br>
+    This reminds me that theres also some dead project out there that converts all the keywords of python into chinese, but it's a bit out of date
+    and the project is dead. I feel like massive amounts of money can be made with this type of stuff in China.
+    Although it is kind of useless in the grand scheme of things, but fun to toy around with a bit if I had nothing to do.
+    Fortunately (or unfortunately?), I have lots to do now, so it can wait. I wonder if I will ever really be free though,
+    there is much ahead.
+    <br>
+    The current approach I'm using is to turn the task environment into a dictionary of functions, then
+    passing that in as input to our meta-rl environment, so it should be able to work on anything that has the gym style api. 
+    Also, pytrees are nice to work with. I was trying to implement the part where we apply the update of the outer neural netowrk 
+    to the flattened parameters of the inner neural network, then reconstruct them back, and for some reason my approach was slow
+    and i'm not sure if it worked in the general case or just the 2 layer mlp toy architecture I was using. 
+    anyways, using equinox the whole update part becomes just 1 line of code with a lambda, which is nice.
+    also wonder how much the biases of the model matters, and would look into it sometime out curiousity, although it seems kind of unimportant. 
+    a bunch of approaches just ignore them.
+    <br>
+    I'm also probably going to be using pgx, which is a set of discrete jax environments that have some games like chess and go. 
+    I'm somewhat worried about branching logic, but really don't want to reimplement my own environments
+    and do more dirty work then I have to. I burned a lot of time on my last paper just doing the dirty work and learned a lesson there.
+    On that note, I'm quite curious how far pure rl can take us. There was that paper called grandmaster level chess without search,
+    which claimed to have beat alphazero (without using mcts), which is believable. They used a supervised approach
+    and did some stuff with tokenizing and transformers and what not. I vaguely remember seeing it on the huggingface
+    daily papers mailing list one morning last year and skimming through it. I didn't think much at the time, but still
+    remember it somehow. I still think with the original alphago moment people were way overselling what rl actually did, 
+    at least to people unfamiliar with the details. 
+    <br>
+    I also think there should be some more "pure" rl competitions for some of these tasks.
+    I bought the domain rlarena.ai which was inspired by lmarena.ai, so I'll get around to do something similar. 
+    Also, the proposal I wrote up for the robosumo morphology control co-optimization competition is pretty much done, and theres a 20k prize pool,
+    but I haven't pulled enough senior people to be co-organizers, so it'll probably be submitted to ICRA or IROS 2026 call for competitions.
+    It's pretty trashy to need bios from organizers since I don't have any senior collaborators in this field. Also just changing fields
+    in general is pretty trashy. I could churn out some more papers around using computational methods
+    to design quantum error correcting codes and related stuff, since I figured out a ton of stuff via trial by fire
+    that isn't anywhere in the literature and have some pretty good ideas to work on that use some halfbaked stuff from my last paper.
+    But after churning out my first paper I kind of realized that despite being the current sota by far, it seems nothing has changed, 
+    and it's obvious to me now that I would rather fail at doing something impactful than be highly successful at something unimpactful.
+    <br>
+    This also reminds me of a while back I submitted an abstract of my paper using rl to design quantum error correcting codes to rldm 2025.
+    the abstract was rejected for not being relevant to the program, which is fair since it was all about an application of rl.
+    I saw they had a workshop on rl in chess and thought that not much had come out of computer chess research recently and people seemed to have mostly moved on.
+    I probably won't be there since my abstract was rejected, and in the future I doubt my work would relate to much the RL crowd.
+    Speaking of which there seems to not be much of a community around learned optimizers and meta learning nowadays as people have all moved to fields with more hype, and
+    it's hard to meet people who still believe in this stuff.
+    <br>
+    I doubt I'll write this much in the near future, since now I'm just slamming my head at the meta-rl thing and
+    pretty much nothing else is happening, and I think short entries are good as well. This was also partly inspired by
+    seeing some of kafka's diaries, and realizing that I should write a bit more, but not too much.
+    <br>
+    I never really thought about this before, but i'm feeling that lots of the bloggers and posters of today might have a net negative benefit to the world.
+    despite their ramblings and all seemingg thoughtful, they are a huge time sink for people who don't know how to pull the plug.
+    I just pulled the plug on X today and limited it to 15 minutes a day with one of the settings under parental controls or something.
+    I don't know what to think of the people who seem to be posting on twitter all day and squeezing into the same ingroup of like 200 other people, but I could never do that myself...
+    That also reminds me of Nat Friedman writing somewhere on his site that it's often better to model the world as like 500 people instead of 8 billion.
+    Anyways, I've seen the same content problem in some other circles like the rationalist crowd in berkeley. They read, talk, and write alot, but
+    I still can't figure out how they are going to impact anything, although most of the people I've interacted with are moreso cheering
+    for the people who are actually doing the heavy lifting.
+    <br>
+    Speaking of which, this post has already devolved into mindless ramblings as well, and the quality is continuously going down as length increases...
+    So I should get back to slamming my head at the meta-rl thing now. 
+    <br>
+    
+</p>

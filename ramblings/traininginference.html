@@ -1,6 +1,29 @@
-<p>reminder to copy paste the substack post over here and delete my substack account.
-    I don't intend to be too heavily embedded in platforms that host content...
-    I would copy it over now, but if I leave it here I am more likely to come back
-    tomorrow or another day and contribute another journal entry while I am at it, so 
-    I'll let this sit here for now.
+<p>
+    suppose we want to use machine learning to improve our machine learning methods.
+    this type of problem falls under the umbrella of meta-learning.
+    <br>
+    we can a train a neural network which modifies another neural network.
+    The second neural network is trained by running (inference) on the first neural network.
+    <br>
+    For the first such neural network that modifies other neural networks, you still have to use
+    a traditional machine learning setup. there is a chicken egg problem here. Once you create the first chicken (or egg),
+    you can use it to bootstrap neural networks that are even better at training. Then training will be equivalent to inference. 
+    so I am quite certain that inference acceleration is going to be the biggest thing to work on in the future.
+    <br>
+    My current work is focusing on creating the first chicken/egg. There have been a handful of papers doing things somewhat similar,
+    and nothings has really worked out, although lots of sota and papers at top venues and what not have came out of it. 
+    I'm quite doubtful that this is going to happen in a general way without some astronomical amount of compute 
+    and some decentralized setup where everyone is helping summon the first chicken/egg model. 
+    it only really needs to learn to maximize the reward, no matter what the reward looks like 
+    and what the task is (even if its a nonsensical or stupid task/reward)
+    <br>
+    My first results could be on go. I contributed the 13x13 go env to PGX (some open source jax environments for games), because
+    I'm not sure I would have enough compute to train a 19x19 go policy to superhuman skill levels.
+    <br>
+    It seems people still think inference chips are insignificant compared to chips that do training.
+    I think they are probably wrong and we will have some renaissance of sorts. things like photonic chips and analog and what not may blow up again.
+    I have to admit I don't understand these modalities much, but as someone who has done some research in quantum error correction,
+    I can assure you that quantum will be unlikely to be part of this. getting to fault tolerance is a long road ahead, and even when we get there
+    it's not quite clear yet what they will be good for besides problems deeply rooted in physics. 
+    it's possible that quantum computers become something like particle accelerators, and just become another tool for physicists to poke at physics.
 </p>

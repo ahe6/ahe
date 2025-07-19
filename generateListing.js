@@ -39,15 +39,15 @@ function getDirectoryEntries(dirPath) {
       const stats = fs.statSync(fullPath);
       
       // If it's a directory, try to find the oldest file in it
-      let mtime = stats.mtime;
+      let mtime = stats.birthtime;
       if (stats.isDirectory()) {
         try {
           const files = fs.readdirSync(fullPath);
           files.forEach(subfile => {
             if (subfile !== 'index.html') {
               const subStats = fs.statSync(path.join(fullPath, subfile));
-              if (subStats.mtime < mtime) {
-                mtime = subStats.mtime;
+              if (subStats.birthtime < mtime) {
+                mtime = subStats.birthtime;
               }
             }
           });
